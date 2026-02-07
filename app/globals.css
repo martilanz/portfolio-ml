@@ -1,0 +1,31 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+    background-repeat: no-repeat;
+background-color: #ffffff;
+background-image:
+  radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    hsl(215, 100%, 92%),
+    transparent 70%
+  ),
+  linear-gradient(
+    90deg,
+    hsl(260, 100%, 96%),
+    hsl(330, 100%, 97%)
+  );
+}
+
+/* Scroll snap SOLO verticale, ma non forzato */
+main {
+  scroll-snap-type: y proximity;
+}
+
+section {
+  min-height: 100vh;              /* NON height */
+  scroll-snap-align: start;
+  scroll-margin-top: 80px;        /* navbar fixed */
+}

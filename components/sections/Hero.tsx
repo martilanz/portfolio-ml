@@ -7,11 +7,24 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { SiAngular, SiDotnet, SiMui, SiNextdotjs, SiNodedotjs, SiReact, SiTypescript } from "react-icons/si";
+import { TbBrandCSharp } from "react-icons/tb";
+import { BsFiletypeSql } from "react-icons/bs";
 
 export default function Hero() {
   const handleGoNext = () => {
     document.querySelector("#whatIDo")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const techStack = [
+    { label: "React", icon: SiReact },
+    { label: "TypeScript", icon: SiTypescript },
+    { label: "Angular", icon: SiAngular },
+    { label: ".NET", icon: SiDotnet },
+    { label: "C#", icon: TbBrandCSharp },
+    { label: "SQL",icon: BsFiletypeSql}
+  
+  ];
 
   return (
     <Box
@@ -201,9 +214,10 @@ export default function Hero() {
               p: 3,
               borderRadius: 4,
               border: "1px solid rgba(15,23,42,0.08)",
-              background: "rgba(255,255,255,0.65)",
+background: "rgba(255,255,255,0.45)",
               backdropFilter: "blur(10px)",
-              boxShadow: "0 12px 40px rgba(15,23,42,0.08)",
+              boxShadow: "0 6px 20px rgba(15,23,42,0.06)"
+
             }}
           >
             <Typography
@@ -220,42 +234,38 @@ export default function Hero() {
               justifyContent="center"
               sx={{ mt: 1 }}
             >
-              {["React", "Next.js", "TypeScript", "Node", "MUI"].map((t) => (
+              {techStack.map(({ label, icon: Icon }) => (
                 <Box
-                  key={t}
+                  key={label}
                   sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 0.6,
                     px: 1.2,
                     py: 0.6,
+                    transition: "transform 150ms ease, box-shadow 150ms ease",
+                    "&:hover": {
+                      transform: "translateY(-1px)",
+                      boxShadow: "0 6px 18px rgba(109,76,246,0.18)",
+                    },
                     borderRadius: 99,
-                    fontSize: 13,
                     border: "1px solid rgba(109,76,246,0.18)",
                     background:
                       "linear-gradient(90deg, rgba(59,130,246,0.10), rgba(109,76,246,0.10), rgba(236,72,153,0.10))",
                   }}
                 >
-                  {t}
+                  <Icon size={14} />
+
+                  <Typography
+                    variant="body2"
+                    sx={{ fontSize: 13, lineHeight: 1 }}
+                  >
+                    {label}
+                  </Typography>
                 </Box>
               ))}
             </Stack>
 
-            <Box
-              sx={{
-                mt: 2.5,
-                p: 2,
-                borderRadius: 3,
-                background: "rgba(15,23,42,0.04)",
-                fontFamily:
-                  "ui-monospace, SFMono-Regular, Menlo, monospace",
-                fontSize: 13,
-                lineHeight: 1.6,
-                textAlign: "left",
-              }}
-            >
-              <Box component="span" sx={{ color: "#6D4CF6" }}>
-                $
-              </Box>{" "}
-              Currently building UI that feels fast, clean and human.
-            </Box>
           </Box>
         </Stack>
 
@@ -266,6 +276,7 @@ export default function Hero() {
             bottom: { xs: 16, sm: 24 },
             left: 0,
             right: 0,
+
             display: "flex",
             justifyContent: "center",
           }}

@@ -7,6 +7,7 @@ import {
   Paper,
   Stack,
   styled,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
@@ -21,6 +22,7 @@ import {
   SiDotnet,
 } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
+import { BsFiletypeSql } from "react-icons/bs";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
@@ -83,22 +85,35 @@ export default function WhatIDo() {
       icon: <DevicesIcon />,
       descr:
         "I design intuitive and user-centered digital experiences, focusing on structure, usability, and visual consistency.",
-      tools: [SiFigma],
+      tools: [
+        { icon: SiFigma, label: "Figma" },
+      ],
     },
     {
       title: "Frontend",
       icon: <CodeIcon />,
       descr:
         "I design and develop modern, responsive, and accessible user interfaces using current frontend technologies.",
-      tools: [SiReact, SiTypescript, SiJavascript, SiAngular],
+      tools: [
+        { icon: SiReact, label: "React" },
+        { icon: SiTypescript, label: "TypeScript" },
+        { icon: SiJavascript, label: "JavaScript" },
+        { icon: SiAngular, label: "Angular" },
+      ],
     },
     {
       title: "Backend",
       icon: <TerminalIcon />,
-      descr: "I develop reliable, scalable, and well-structured application logic and APIs.",
-      tools: [SiDotnet, TbBrandCSharp],
+      descr:
+        "I develop reliable, scalable, and well-structured application logic and APIs.",
+      tools: [
+        { icon: SiDotnet, label: ".NET" },
+        { icon: TbBrandCSharp, label: "C#" },
+        {icon: BsFiletypeSql , label: "SQL"}
+      ],
     },
   ];
+
 
   return (
     <Box
@@ -283,39 +298,49 @@ export default function WhatIDo() {
                     {i.descr}
                   </Typography>
 
-                  <Box
-                    sx={{
-                      mt: 3,
-                      display: "flex",
-                      flexWrap: "wrap",
-                      justifyContent: "center",
-                      gap: 1.2,
-                    }}
-                  >
-                    {i.tools.map((ToolIcon, index) => (
-                      <Box
-                        key={index}
-                        sx={{
-                          width: 38,
-                          height: 38,
-                          display: "grid",
-                          placeItems: "center",
-                          borderRadius: 2.5,
-                          background:
-                            "linear-gradient(90deg, rgba(59,130,246,0.08), rgba(109,76,246,0.08), rgba(236,72,153,0.08))",
-                          border: "1px solid rgba(15,23,42,0.08)",
-                          color: "rgba(15,23,42,0.55)",
-                          transition: "transform 150ms ease, border-color 150ms ease",
-                          "&:hover": {
-                            transform: "scale(1.08)",
-                            borderColor: "rgba(236,72,153,0.35)",
-                          },
-                        }}
-                      >
-                        <ToolIcon size={20} />
-                      </Box>
-                    ))}
-                  </Box>
+               <Box
+  sx={{
+    mt: 3,
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: 1,
+  }}
+>
+  {i.tools.map(({ icon: ToolIcon, label }) => (
+    <Tooltip
+      key={label}
+      title={label}
+      arrow
+      enterDelay={300}
+      placement="top"
+    >
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: 40,
+          height: 32,
+          borderRadius: 99,
+          border: "1px solid rgba(109,76,246,0.18)",
+          background:
+            "linear-gradient(90deg, rgba(59,130,246,0.10), rgba(109,76,246,0.10), rgba(236,72,153,0.10))",
+          color: "rgba(15,23,42,0.65)",
+          transition: "transform 150ms ease, box-shadow 150ms ease",
+          cursor: "default",
+          "&:hover": {
+            transform: "translateY(-1px)",
+            boxShadow: "0 6px 18px rgba(109,76,246,0.18)",
+          },
+        }}
+      >
+        <ToolIcon size={18} />
+      </Box>
+    </Tooltip>
+  ))}
+</Box>
+
                 </Box>
               </Item>
             ))}

@@ -16,6 +16,9 @@ import { Avatar, Typography } from "@mui/material";
 import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
+import Link from "next/link";
+
+
 // NAV helpers
 const NAVBAR_HEIGHT = 88;
 
@@ -141,8 +144,9 @@ export default function AppAppBar() {
               onClick={handleScrollTo("#projects")}
             />
             <Button
-              href="/resume.pdf"
-              target="_blank"
+              href="/resume"
+              // component={Link}
+              // target="_blank"
               variant="contained"
               size="small"
               sx={{

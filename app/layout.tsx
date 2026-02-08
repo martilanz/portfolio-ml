@@ -45,7 +45,6 @@ export default function RootLayout({
         className={`${inter.variable} ${roboto.variable}`}
       >
         <Navbar />
-
         {children}
         <Footer />
       </body>

@@ -175,7 +175,7 @@ export default function Footer() {
                 mx: 0.5,
               }}
             />
-            using React & Material UI.
+            using Next.js, React, Material UI.
           </Typography>
         </Stack>
       </Container>

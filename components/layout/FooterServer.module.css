@@ -1,0 +1,109 @@
+.footer{
+  margin-top: 112px;
+  position: relative;
+  overflow: hidden;
+  background-color:#fff;
+  background-image:
+    radial-gradient(ellipse 70% 40% at 50% 120%,
+      hsl(215, 100%, 94%),
+      hsl(260, 100%, 96%) 40%,
+      hsl(330, 100%, 97%) 65%,
+      transparent 80%);
+  border-top:1px solid rgba(15,23,42,0.08);
+}
+
+.texture{
+  position:absolute; inset:0;
+  pointer-events:none;
+  opacity:0.25;
+  background-image: radial-gradient(rgba(15,23,42,0.08) 1px, transparent 1px);
+  background-size:20px 20px;
+  -webkit-mask-image: linear-gradient(to top, black 40%, transparent 100%);
+  mask-image: linear-gradient(to top, black 40%, transparent 100%);
+}
+
+.blob{
+  position:absolute;
+  bottom:-40%;
+  left:50%;
+  transform:translateX(-50%);
+  width:420px; height:420px;
+  border-radius:50%;
+  background: radial-gradient(circle at 30% 30%,
+    rgba(109,76,246,0.18),
+    rgba(236,72,153,0.12),
+    transparent 70%);
+  /* blur più basso = molto più fluido */
+  filter: blur(70px);
+  pointer-events:none;
+}
+
+.container{
+  width:min(980px, calc(100% - 48px));
+  margin:0 auto;
+  position:relative;
+  z-index:1;
+  padding: 56px 0;
+  display:grid;
+  gap:18px;
+  text-align:center;
+  place-items:center;
+}
+
+.brand{
+  font-weight:800;
+  letter-spacing:1px;
+  background: linear-gradient(90deg, #3B82F6, #6D4CF6, #EC4899);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+.social{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.iconBtn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:14px;
+  border:1px solid rgba(15,23,42,0.08);
+  background: rgba(255,255,255,0.6);
+  text-decoration:none;
+  color: rgba(15,23,42,0.72);
+  font-weight:800;
+  transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.iconBtn:hover{
+  transform: translateY(-3px);
+  border-color: rgba(109,76,246,0.35);
+  box-shadow: 0 12px 30px rgba(109,76,246,0.18);
+}
+
+.divider{
+  width:160px;
+  height:3px;
+  border-radius:99px;
+  background: linear-gradient(90deg,
+    rgba(59,130,246,0.75),
+    rgba(109,76,246,0.75),
+    rgba(236,72,153,0.75));
+  box-shadow: 0 8px 22px rgba(109,76,246,0.12);
+}
+
+.copy{
+  color: rgba(15,23,42,0.60);
+  font-size: 14px;
+  line-height: 1.6;
+  padding-bottom: 12px;
+}
+
+@media (max-width: 600px){
+  .container{ width: calc(100% - 28px); padding: 44px 0; }
+}

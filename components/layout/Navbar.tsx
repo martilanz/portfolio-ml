@@ -28,7 +28,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   justifyContent: "space-between",
   flexShrink: 0,
   borderRadius: 999,
-  backdropFilter: "blur(18px)",
+  backdropFilter: "blur(8px)",
   border: "1px solid rgba(15,23,42,0.10)",
   backgroundColor: theme.vars
     ? `rgba(${theme.vars.palette.background.defaultChannel} / 0.55)`
@@ -132,7 +132,7 @@ export default function AppAppBar() {
               gap: 0.5,
             }}
           >
-            <NavLink label="Home" href="#hero" onClick={handleScrollTo("#hero")} />
+            <NavLink label="Home" href="/home"  />
             <NavLink
               label="About"
               href="#whatIDo"

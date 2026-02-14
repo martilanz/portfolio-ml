@@ -133,16 +133,11 @@ export default function AppAppBar() {
             }}
           >
             <NavLink label="Home" href="/home"  />
-            <NavLink
-              label="About"
-              href="#whatIDo"
-              onClick={handleScrollTo("#whatIDo")}
-            />
-            <NavLink
+            {/* <NavLink
               label="Projects"
               href="#projects"
               onClick={handleScrollTo("#projects")}
-            />
+            /> */}
             <Button
               href="/resume"
               // component={Link}
@@ -180,7 +175,7 @@ export default function AppAppBar() {
                 borderRadius: 14,
                 border: "1px solid rgba(15,23,42,0.10)",
                 backgroundColor: "rgba(255,255,255,0.6)",
-                backdropFilter: "blur(10px)",
+                backdropFilter: "blur(8px)",
                 transition: "all 150ms ease",
                 "&:hover": {
                   transform: "translateY(-1px)",
@@ -273,45 +268,7 @@ export default function AppAppBar() {
                   </Button>
 
                   <Button
-                    onClick={handleScrollTo("#whatIDo")}
-                    sx={{
-                      justifyContent: "flex-start",
-                      textTransform: "none",
-                      fontWeight: 800,
-                      borderRadius: 3,
-                      py: 1.2,
-                      px: 1.4,
-                      color: "rgba(15,23,42,0.85)",
-                      "&:hover": {
-                        background:
-                          "linear-gradient(90deg, rgba(59,130,246,0.10), rgba(109,76,246,0.10), rgba(236,72,153,0.10))",
-                      },
-                    }}
-                  >
-                    About
-                  </Button>
-
-                  <Button
-                    onClick={handleScrollTo("#projects")}
-                    sx={{
-                      justifyContent: "flex-start",
-                      textTransform: "none",
-                      fontWeight: 800,
-                      borderRadius: 3,
-                      py: 1.2,
-                      px: 1.4,
-                      color: "rgba(15,23,42,0.85)",
-                      "&:hover": {
-                        background:
-                          "linear-gradient(90deg, rgba(59,130,246,0.10), rgba(109,76,246,0.10), rgba(236,72,153,0.10))",
-                      },
-                    }}
-                  >
-                    Projects
-                  </Button>
-
-                  <Button
-                    href="/resume.pdf"
+                    href="/resume"                    
                     target="_blank"
                     variant="contained"
                     sx={{

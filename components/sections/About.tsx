@@ -120,10 +120,10 @@ export default function WhatIDo() {
       id="whatIDo"
       sx={{
         width: "100%",
-        minHeight: `calc(100vh - 96px)`,
+        minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        // position: "relative",
+        position: "relative",
         // overflow: "hidden",
         // scrollMarginTop: "96px",
 
@@ -197,7 +197,7 @@ export default function WhatIDo() {
         sx={{
           position: "relative",
           zIndex: 1,
-          py: { xs: 8, sm: 10 },
+          // py: { xs: 8, sm: 10 },
         }}
       >
         <Stack spacing={2} alignItems="center" textAlign="center">

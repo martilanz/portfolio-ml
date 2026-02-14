@@ -16,6 +16,8 @@ export default function Hero() {
     document.querySelector("#whatIDo")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  
+
   const techStack = [
     { label: "React", icon: SiReact },
     { label: "TypeScript", icon: SiTypescript },
@@ -187,21 +189,6 @@ export default function Hero() {
               }}
             >
               Resume
-            </Button>
-
-            <Button
-              variant="outlined"
-              sx={{
-                px: 3,
-                borderRadius: 999,
-                textTransform: "none",
-                fontWeight: 600,
-                borderColor: "rgba(109,76,246,0.35)",
-                backgroundColor: "rgba(255,255,255,0.6)",
-                backdropFilter: "blur(8px)",
-              }}
-            >
-              Contact
             </Button>
           </Stack>
 

@@ -18,6 +18,7 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  margin-top: 3%;
 }
 
 .texture {
@@ -37,7 +38,7 @@
   border-radius: 999px;
   z-index: 0;
   /* blur più basso = molto più fluido */
-  filter: blur(60px);
+  filter: blur(30px);
 }
 
 .blobLeft {

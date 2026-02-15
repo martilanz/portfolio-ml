@@ -178,6 +178,7 @@ export default function Hero() {
           <Stack direction="row" spacing={2}>
             <Button
               variant="contained"
+              href="/resume"
               sx={{
                 px: 3,
                 borderRadius: 999,

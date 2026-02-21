@@ -10,11 +10,14 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { SiAngular, SiDotnet, SiMui, SiNextdotjs, SiNodedotjs, SiReact, SiTypescript } from "react-icons/si";
 import { TbBrandCSharp } from "react-icons/tb";
 import { BsFiletypeSql } from "react-icons/bs";
+import {useTranslations} from 'next-intl';
 
 export default function Hero() {
   const handleGoNext = () => {
     document.querySelector("#whatIDo")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const t = useTranslations('Hero');
 
   
 
@@ -171,7 +174,8 @@ export default function Hero() {
               maxWidth: 700,
             }}
           >
-            Full Stack Developer specialized in frontend development, focused on building modern, scalable, and user-friendly interfaces. I’m driven by continuous learning and enjoy transforming ideas into reliable, well-crafted digital products.
+            {/* Full Stack Developer specialized in frontend development, focused on building modern, scalable, and user-friendly interfaces. I’m driven by continuous learning and enjoy transforming ideas into reliable, well-crafted digital products. */}
+            {t('descr')}
           </Typography>
 
           {/* CTA */}

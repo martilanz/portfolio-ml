@@ -3,6 +3,8 @@ import { Inter, Roboto } from "next/font/google";
 import Providers from "./provider";
 import Navbar from "@/components/layout/Navbar";
 import FooterServer from "@/components/layout/Footer";
+import {NextIntlClientProvider} from 'next-intl';
+
 
 export const metadata = {
   title: "Martina Lanzillo | Software Developer",
@@ -20,10 +22,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${inter.variable} ${roboto.variable}`}>
+        <NextIntlClientProvider>
         <Providers>
           <Navbar />
           {children}
         </Providers>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

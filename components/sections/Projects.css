@@ -1,0 +1,100 @@
+/* =========================================================
+   TECH CARD
+========================================================= */
+:root {
+  /* Background */
+  --hero-bg: #ffffff;
+
+  --hero-bg-grad:
+    radial-gradient(ellipse 80% 50% at 50% -20%,
+      hsl(215, 100%, 92%),
+      hsl(260, 100%, 94%) 40%,
+      hsl(330, 100%, 96%) 65%,
+      transparent 80%),
+    radial-gradient(circle at 10% 20%,
+      rgba(59, 130, 246, 0.12),
+      transparent 55%),
+    radial-gradient(circle at 90% 30%,
+      rgba(236, 72, 153, 0.10),
+      transparent 55%);
+
+  /* Text */
+  --hero-text-muted: rgba(0, 0, 0, 0.6);
+
+  /* Texture */
+  --hero-texture-dot: rgba(15, 23, 42, 0.08);
+
+  /* Blob */
+  --hero-blob-bg: radial-gradient(circle at 30% 30%,
+    rgba(59, 130, 246, 0.18),
+    rgba(109, 76, 246, 0.14),
+    rgba(236, 72, 153, 0.10));
+
+  /* CTA */
+  --hero-cta-grad: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.95),
+    rgba(109, 76, 246, 0.95),
+    rgba(236, 72, 153, 0.95)
+  );
+  --hero-cta-shadow: 0 12px 30px rgba(109, 76, 246, 0.18);
+
+  /* Card */
+  --hero-card-bg: rgba(255, 255, 255, 0.45);
+  --hero-card-border: rgba(15, 23, 42, 0.08);
+  --hero-card-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
+
+  /* Tech pill */
+  --hero-pill-border: rgba(109, 76, 246, 0.18);
+  --hero-pill-bg: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.10),
+    rgba(109, 76, 246, 0.10),
+    rgba(236, 72, 153, 0.10)
+  );
+  --hero-pill-hover-shadow: 0 6px 18px rgba(109, 76, 246, 0.18);
+}
+.techCard {
+  margin-top: 16px;
+  width: 100%;
+  max-width: 520px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--hero-card-border);
+  background: var(--hero-card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--hero-card-shadow);
+}
+
+.techCardTitle {
+  letter-spacing: 2px;
+  color: var(--hero-text-muted);
+}
+
+.techPills {
+  margin-top: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techPill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--hero-pill-border);
+  background: var(--hero-pill-bg);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.techPill:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--hero-pill-hover-shadow);
+}
+
+.techPillText {
+  font-size: 13px;
+  line-height: 1;
+}

@@ -186,9 +186,16 @@ export default function AppAppBar() {
 
   // Fallback “locale” (UI pronta: poi la colleghi al tuo ThemeProvider):
   const [mode, setMode] = React.useState<"light" | "dark">("light");
+
+  React.useEffect(() => {
+    const saved = localStorage.getItem("theme-mode") as "light" | "dark" | null;
+    if (saved) setMode(saved);
+  }, []);
+
   const handleToggleMode = () => {
-    setMode((m) => (m === "dark" ? "light" : "dark"));
-    // TODO: collega al tuo theme provider / store (context, redux, zustand, etc.)
+    const next = mode === "dark" ? "light" : "dark";
+    setMode(next);
+    (window as any).__setThemeMode?.(next);
   };
 
   const toggleDrawer = (newOpen: boolean) => () => setOpen(newOpen);
@@ -244,6 +251,7 @@ export default function AppAppBar() {
             }}
           >
             <NavLink label="Home" href="/home" />
+            <NavLink label="Projects" href="/projects" />
 
             {/* Language switch */}
             <LanguageToggle value={lang} onChange={handleLanguageChange} />

@@ -1,5 +1,6 @@
 import Image from "next/image";
-import styles from "./ResumeServer.module.css";
+import "./ResumeServer.css"
+
 
 const experience = [
   {
@@ -73,17 +74,17 @@ function SectionTitle({
   icon: string;
 }) {
   return (
-    <div className={styles.sectionTitle}>
-      <div className={styles.sectionTitleTop}>
-        <div className={styles.sectionIcon} aria-hidden>
+    <div className={"sectionTitle"}>
+      <div className={"sectionTitleTop"}>
+        <div className={"sectionIcon"} aria-hidden>
           {icon}
         </div>
         <div>
-          <div className={styles.sectionTitleText}>{title}</div>
-          {subtitle ? <div className={styles.sectionSubtitle}>{subtitle}</div> : null}
+          <div className={"sectionTitleText"}>{title}</div>
+          {subtitle ? <div className={"sectionSubtitle"}>{subtitle}</div> : null}
         </div>
       </div>
-      <div className={styles.sectionUnderline} aria-hidden />
+      <div className={"sectionUnderline"} aria-hidden />
     </div>
   );
 }
@@ -102,25 +103,25 @@ function TimelineItem({
   leading?: React.ReactNode;
 }) {
   return (
-    <article className={styles.timelineItem}>
-      <span className={styles.timelineDot} aria-hidden />
+    <article className={"timelineItem"}>
+      <span className={"timelineDot"} aria-hidden />
 
-      <header className={styles.itemHeader}>
-        <div className={styles.itemLeft}>
-          {leading ? <div className={styles.leading}>{leading}</div> : null}
+      <header className={"itemHeader"}>
+        <div className={"itemLeft"}>
+          {leading ? <div className={"leading"}>{leading}</div> : null}
           <div>
-            <div className={styles.itemTitle}>{title}</div>
-            <div className={styles.itemOrg}>{org}</div>
+            <div className={"itemTitle"}>{title}</div>
+            <div className={"itemOrg"}>{org}</div>
           </div>
         </div>
-        <div className={styles.itemMeta}>{meta}</div>
+        <div className={"itemMeta"}>{meta}</div>
       </header>
 
-      <div className={styles.itemDivider} aria-hidden />
+      <div className={"itemDivider"} aria-hidden />
 
-      <ul className={styles.bullets}>
+      <ul className={"bullets"}>
         {bullets.map((b) => (
-          <li key={b} className={styles.bullet}>
+          <li key={b} className={"bullet"}>
             {b}
           </li>
         ))}
@@ -131,26 +132,26 @@ function TimelineItem({
 
 export default function ResumeServer() {
   return (
-    <section id="resume" className={styles.root}>
-      <div className={styles.texture} aria-hidden />
-      <div className={styles.blobLeft} aria-hidden />
-      <div className={styles.blobRight} aria-hidden />
+    <section id="resume" className={"root"}>
+      <div className={"texture"} aria-hidden />
+      <div className={"blobLeft"} aria-hidden />
+      <div className={"blobRight"} aria-hidden />
 
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.overline}>Resume</div>
+      <div className={"container"}>
+        <div className={"header"}>
+          <div className={"overline"}>Resume</div>
 
-          <h1 className={styles.h1}>
-            Martina <span className={styles.gradientText}>Lanzillo</span>
+          <h1 className={"h1"}>
+            Martina <span className={"gradientText"}>Lanzillo</span>
           </h1>
 
         </div>
 
-        <div className={styles.glassCard}>
-          <div className={styles.cardInner}>
+        <div className={"glassCard"}>
+          <div className={"cardInner"}>
             <div>
               <SectionTitle icon="★" title="Summary" subtitle="A quick overview" />
-              <p className={styles.paragraph}>
+              <p className={"paragraph"}>
                 Full Stack Developer with a strong focus on frontend development and the
                 creation of modern, intuitive, and user-centered interfaces. I enjoy building
                 high-quality products, continuously learning, and turning ideas into concrete,
@@ -158,11 +159,11 @@ export default function ResumeServer() {
               </p>
             </div>
 
-            <hr className={styles.hr} />
+          <hr className={"hr"} />
 
             <div>
               <SectionTitle icon="💼" title="Experience" subtitle="Recent roles and responsibilities" />
-              <div className={styles.timeline}>
+              <div className={"timeline"}>
                 {experience.map((e) => (
                   <TimelineItem
                     key={e.title + e.org}
@@ -175,11 +176,11 @@ export default function ResumeServer() {
               </div>
             </div>
 
-            <hr className={styles.hr} />
+            <hr className={"hr"} />
 
             <div>
               <SectionTitle icon="🎓" title="Education" subtitle="Academic background" />
-              <div className={styles.timeline}>
+              <div className={"timeline"}>
                 {education.map((e) => (
                   <TimelineItem
                     key={e.title + e.org}
@@ -193,7 +194,7 @@ export default function ResumeServer() {
                         alt={e.org}
                         width={44}
                         height={44}
-                        className={styles.logo}
+                        className={"logo"}
                       />
                     }
                   />

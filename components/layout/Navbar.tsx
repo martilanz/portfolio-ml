@@ -406,6 +406,25 @@ export default function AppAppBar() {
                     Home
                   </Button>
 
+                    <Button
+                    href="/projects"
+                    sx={{
+                      justifyContent: "flex-start",
+                      textTransform: "none",
+                      fontWeight: 800,
+                      borderRadius: 3,
+                      py: 1.2,
+                      px: 1.4,
+                      color: "rgba(15,23,42,0.85)",
+                      "&:hover": {
+                        background:
+                          "linear-gradient(90deg, rgba(59,130,246,0.10), rgba(109,76,246,0.10), rgba(236,72,153,0.10))",
+                      },
+                    }}
+                  >
+                    Home
+                  </Button>
+
                   <Button
                     href="/resume"
                     target="_blank"

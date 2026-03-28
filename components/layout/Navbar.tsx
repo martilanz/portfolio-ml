@@ -422,7 +422,7 @@ export default function AppAppBar() {
                       },
                     }}
                   >
-                    Home
+                    Projects
                   </Button>
 
                   <Button
